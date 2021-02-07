@@ -1,5 +1,7 @@
 package barriers;
 
+import runners.Jumpble;
+
 public class Wall implements Obstacle{
     private int hight;
 
@@ -8,7 +10,7 @@ public class Wall implements Obstacle{
     }
 
     @Override
-    public boolean action(Runnable c) {
-        return true;
+    public boolean action(Jumpble c) {
+        return c.jump(hight);
     }
 }

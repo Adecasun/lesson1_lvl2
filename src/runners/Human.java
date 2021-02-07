@@ -1,6 +1,6 @@
 package runners;
 
-public class Human implements Runnable {
+public class Human implements Jumpble {
 
     private String name;
     private int maxRunDistance;
@@ -11,7 +11,9 @@ public class Human implements Runnable {
         this.maxRunDistance = maxRunDistance;
         this.maxJumpHight = maxJumpHight;
     }
-
+    public Human(){
+        this("Vasya",300,30);
+    }
 
     @Override
     public boolean run(int distance) {
