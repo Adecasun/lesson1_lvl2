@@ -1,6 +1,6 @@
 package runners;
 
 public interface Runnable {
-    void run(int distance);
-    void jump(int distance);
+    boolean run(int distance);
+    boolean jump(int distance);
 }

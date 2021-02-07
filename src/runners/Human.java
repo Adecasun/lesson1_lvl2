@@ -1,23 +1,42 @@
 package runners;
 
 public class Human implements Runnable {
+
+    private String name;
+    private int maxRunDistance;
+    private int maxJumpHight;
+
+    public Human(String name, int maxRunDistance, int maxJumpHight) {
+        this.name = name;
+        this.maxRunDistance = maxRunDistance;
+        this.maxJumpHight = maxJumpHight;
+    }
+
+
     @Override
-    public void run(int distance) {
-        if(maxRunDistance <= distance){
-            System.out.println("Человек успешно пробежал дистанцию");
+    public boolean run(int distance) {
+        if(distance <= maxRunDistance){
+            System.out.println("Человек успешно пробежал дистанцию " + distance + "м");
+            return true;
         } else {
-            System.out.println("Человек не смог пробежать дистанцию");
+            System.out.println("Человек не смог пробежать дистанцию "+ distance + "м");
+            return false;
         }
 
     }
 
     @Override
-    public void jump(int distance) {
+    public boolean jump(int distance) {
+        if(distance <= maxJumpHight){
+            System.out.println("Человек по имени " + name+" успешно перепрыгнул препятствие высотой " + distance + "м");
+            return true;
+        } else {
+            System.out.println("Человек по имени " + name+" не смог перепрыгнуть препятствие высотой " + distance + "м");
+            return false;
+        }
 
 
     }
 
-    private String name;
-    private int maxRunDistance;
-    private int maxJumpHight;
+
 }
