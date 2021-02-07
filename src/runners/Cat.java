@@ -1,6 +1,6 @@
 package runners;
 
-public class Cat implements Runnable {
+public class Cat implements Jumpble {
     private String name;
     private int maxRunDistance;
     private int maxJumpHight;

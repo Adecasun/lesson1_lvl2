@@ -1,6 +1,8 @@
 package barriers;
 
 
+import runners.Jumpble;
+
 public class RunRoad implements Obstacle{
      int distance;
 
@@ -9,7 +11,7 @@ public class RunRoad implements Obstacle{
     }
 
     @Override
-    public boolean action(Runnable r) {
-        return r.run(distance);
+    public boolean action(Jumpble c) {
+        return c.run(distance);
     }
 }

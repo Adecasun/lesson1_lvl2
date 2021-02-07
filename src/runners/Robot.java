@@ -1,6 +1,6 @@
 package runners;
 
-public class Robot implements Runnable {
+public class Robot implements Jumpble {
     private String name;
     private int maxRunDistance;
     private int maxJumpHight;

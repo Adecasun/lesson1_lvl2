@@ -1,20 +1,39 @@
+import barriers.Obstacle;
+import barriers.RunRoad;
+import barriers.Wall;
 import runners.Cat;
 import runners.Human;
+import runners.Jumpble;
 import runners.Robot;
 
 public class Main {
     public static void main(String[] args) {
-        Human h1 = new Human("Vasya", 300, 10);
-        h1.run(3100);
-        h1.jump(50);
 
-        Cat cat1 = new Cat("Barsik", 200, 2);
-        cat1.run(100);
-        cat1.jump(10);
 
-        Robot rob1 = new Robot("R2D2", 5000, 10);
-        rob1.run(3000);
-        rob1.jump(8);
+        Jumpble[] jumpbles = {
+                new Human("Petya", 300, 20),
+                new Cat("Vaska",500, 2),
+                new Robot("C3PO", 5000, 10)
+
+        };
+
+        Obstacle[] obstacles = {
+                new RunRoad(500),
+                new Wall(1)
+        };
+
+        for(Jumpble j : jumpbles){
+            for(Obstacle o : obstacles){
+                if(!o.action(j)){
+                    break;
+                }
+            }
+        }
+
+
+
+
+
 
     }
 }
